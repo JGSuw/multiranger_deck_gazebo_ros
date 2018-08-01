@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <!-- This file is based off of the Gazebo lidar sensor tutorial -->
+  <!-- http://gazebosim.org/tutorials?cat=guided_i&tut=guided_i1 -->
+
+  <model name="multiranger_deck">
+    <link name="base">
+      <!-- offset the base by half the thickness of the PCB -->
+      <pose> 0 0 0.000835 0 0 0</pose>
+      <collision name="base_collision">
+        <geometry>
+          <box>
+            <size>.0254 .0254 .00167 </size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="base_visual">
+        <geometry>
+          <box>
+            <size>.0254 .0254 .00167 </size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='front_sensor'>
+      <pose>.011865 0 .004845 0 1.5707 0 </pose>
+      <collision name="front_sensor_collision">
+        <geometry>
+          <box>
+            <size>.00635 .0127 .00167</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="front_sensor_visual">
+        <geometry>
+          <box>
+            <size>.00635 .0127 .00167</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <sensor type="ray" name="front_sensor">
+        <pose>.000835 0 0 0 -1.5707 0</pose>
+        <!-- Enable visualization to see the rays in the GUI-->
+        <visualize>true</visualize>
+
+        <!-- Set the update rate of the sensor -->
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <!-- Only using horizontal beams for now -->
+            <horizontal>
+              <samples>32</samples>
+              <!-- Resolution is multiplied by samples to determine the number
+                  of simulated beams vs interpolated beams
+               -->
+              <resolution>1</resolution>
+              <min_angle>-.20943</min_angle>
+              <max_angle>.20943</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>32</samples>
+              <resolution>1</resolution>
+              <min_angle>-.20943</min_angle>
+              <max_angle>.20943</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>.02</min>
+            <max>4.</max>
+          </range>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name='left_sensor'>
+      <pose>0 .011854 .004845 0 1.5707 1.5707 </pose>
+      <collision name="left_sensor_collision">
+        <geometry>
+          <box>
+            <size>.00635 .0127 .00167</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="left_sensor_visual">
+        <geometry>
+          <box>
+            <size>.00635 .0127 .00167</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <sensor type="ray" name="left_sensor">
+        <pose>.000835 0 0 0 -1.5707 0</pose>
+        <!-- Enable visualization to see the rays in the GUI-->
+        <visualize>true</visualize>
+
+        <!-- Set the update rate of the sensor -->
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <!-- Only using horizontal beams for now -->
+            <horizontal>
+              <samples>32</samples>
+              <!-- Resolution is multiplied by samples to determine the number
+                  of simulated beams vs interpolated beams
+               -->
+              <resolution>1</resolution>
+              <min_angle>-.20943</min_angle>
+              <max_angle>.20943</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>32</samples>
+              <resolution>1</resolution>
+              <min_angle>-.20943</min_angle>
+              <max_angle>.20943</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>.02</min>
+            <max>4.</max>
+          </range>
+        </ray>
+      </sensor>
+    </link>
+
+    <link name='back_sensor'>
+      <pose>-.011865 0 .004845 0 -1.5707 0 </pose>
+      <collision name="back_sensor_collision">
+        <geometry>
+          <box>
+            <size>.00635 .0127 .00167</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="back_sensor_visual">
+        <geometry>
+          <box>
+            <size>.00635 .0127 .00167</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <sensor type="ray" name="back_sensor">
+        <pose>.000835 0 0 0 -1.5707 0</pose>
+        <!-- Enable visualization to see the rays in the GUI-->
+        <visualize>true</visualize>
+
+        <!-- Set the update rate of the sensor -->
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <!-- Only using horizontal beams for now -->
+            <horizontal>
+              <samples>32</samples>
+              <!-- Resolution is multiplied by samples to determine the number
+                  of simulated beams vs interpolated beams
+               -->
+              <resolution>1</resolution>
+              <min_angle>-.20943</min_angle>
+              <max_angle>.20943</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>32</samples>
+              <resolution>1</resolution>
+              <min_angle>-.20943</min_angle>
+              <max_angle>.20943</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>.02</min>
+            <max>4.</max>
+          </range>
+        </ray>
+      </sensor>
+    </link>
+
+      <link name='right_sensor'>
+        <pose>0 -.011865 .004845 0 1.5707 -1.5707 </pose>
+        <collision name="right_sensor_collision">
+          <geometry>
+            <box>
+              <size>.00635 .0127 .00167</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="right_sensor_visual">
+          <geometry>
+            <box>
+              <size>.00635 .0127 .00167</size>
+            </box>
+          </geometry>
+        </visual>
+
+        <sensor type="ray" name="right_sensor">
+          <pose>.000835 0 0 0 -1.5707 0</pose>
+          <!-- Enable visualization to see the rays in the GUI-->
+          <visualize>true</visualize>
+
+          <!-- Set the update rate of the sensor -->
+          <update_rate>10</update_rate>
+          <ray>
+            <scan>
+              <!-- Only using horizontal beams for now -->
+              <horizontal>
+                <samples>32</samples>
+                <!-- Resolution is multiplied by samples to determine the number
+                    of simulated beams vs interpolated beams
+                 -->
+                <resolution>1</resolution>
+                <min_angle>-.20943</min_angle>
+                <max_angle>.20943</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>32</samples>
+                <resolution>1</resolution>
+                <min_angle>-.20943</min_angle>
+                <max_angle>.20943</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>.02</min>
+              <max>4.</max>
+            </range>
+          </ray>
+        </sensor>
+      </link>
+
+      <link name='top_sensor'>
+        <pose>0 0 .002505 0 0 0 </pose>
+        <collision name="top_sensor_collision">
+          <geometry>
+            <box>
+              <size>.00635 .0127 .00167</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="top_sensor_visual">
+          <geometry>
+            <box>
+              <size>.00635 .0127 .00167</size>
+            </box>
+          </geometry>
+        </visual>
+
+        <sensor type="ray" name="top_sensor">
+          <pose>.000835 0 0 0 -1.5707 0</pose>
+          <!-- Enable visualization to see the rays in the GUI-->
+          <visualize>true</visualize>
+
+          <!-- Set the update rate of the sensor -->
+          <update_rate>10</update_rate>
+          <ray>
+            <scan>
+              <!-- Only using horizontal beams for now -->
+              <horizontal>
+                <samples>32</samples>
+                <!-- Resolution is multiplied by samples to determine the number
+                    of simulated beams vs interpolated beams
+                 -->
+                <resolution>1</resolution>
+                <min_angle>-.20943</min_angle>
+                <max_angle>.20943</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>32</samples>
+                <resolution>1</resolution>
+                <min_angle>-.20943</min_angle>
+                <max_angle>.20943</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>.02</min>
+              <max>4.</max>
+            </range>
+          </ray>
+        </sensor>
+      </link>
+
+      <plugin name="multiranger_deck_gazebo_ros" filename="libmultiranger_deck_gazebo_ros.so"/>
+  </model>
+</sdf>
