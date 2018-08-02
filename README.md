@@ -3,7 +3,7 @@ MultiRanger is currently unreleased and this project is a work in progress.
 
 # How it Works
 This project models the Multiranger deck by representing the VL53L1X sensor as a RaySensor in the SDF format used by Gazebo.
-The sensor region of interest is modeled as a volume of rays using the <horizontal> and <vertical> <scan> properties of the RaySensor.
+The sensor region of interest is modeled as a volume of rays using the `<horizontal>` and `<vertical>` `<scan>` properties of the RaySensor.
 Then, a model plug-in publishes the minimum distance measured in each volume of rays to a topic.
 This is the same approach as is used in Hector Gazebo Plugins to model sonar sensors commonly used as altimeters in larger quadrotors.
 
