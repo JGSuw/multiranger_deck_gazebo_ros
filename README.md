@@ -16,11 +16,11 @@ Clone this repository to a catkin workspace and build from source using
 This will put the gazebo plugin library and model in the devel/share folder of the workspace.
 
 # How to use
-Relative to your catkin workspace location, add devel/lib to CATKIN_PLUGIN_PATH
-and devel/share/multiranger_deck_gazebo_ros to CATKIN_MODEL_PATH.
-Then, start a roscore and Gazebo with
-`roscore & rosrun gazebo_ros gazebo`
-Finally, just insert the multiranger model into the Gazebo world.
+Relative to your catkin workspace location, 
+- add devel/lib to `CATKIN_PLUGIN_PATH`
+- add devel/share/multiranger_deck_gazebo_ros/model to `CATKIN_MODEL_PATH`
+- start a roscore and Gazebo with `roscore & rosrun gazebo_ros gazebo`
+- insert the multiranger model into the Gazebo world.
 
 # Acknowledgements
 This project benefited from the open-source Hector Gazebo Plugins repository and the Gazebo plugin-tutorial.
