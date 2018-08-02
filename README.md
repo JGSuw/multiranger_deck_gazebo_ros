@@ -31,3 +31,4 @@ In particular, the sonar gazebo plugin in Hector Gazebo Plugins was used as a re
 - Parameterize the model to implement the various operating modes of the VL53L1X (angle spread, range, update rate etc)
 - Add parameter to disable visual rendering of the sensor rays
 - Remake the collision and visual elements of the model to match the dimensions and appearance of the sensor
+- Add support for prior versions of the Gazebo API
