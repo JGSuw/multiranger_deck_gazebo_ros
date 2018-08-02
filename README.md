@@ -23,8 +23,7 @@ Relative to your catkin workspace location,
 - insert the multiranger model into the Gazebo world.
 
 # Acknowledgements
-This project benefited from the open-source Hector Gazebo Plugins repository and the Gazebo plugin-tutorial.
-In particular, the sonar gazebo plugin in Hector Gazebo Plugins was used as a reference.
+This project benefited from Hector Gazebo Plugins [Hector Gazebo Plugins](http://wiki.ros.org/hector_gazebo_plugins) and the Gazebo plugin-tutorial. In particular, the sonar gazebo plugin in Hector Gazebo Plugins was used as a reference.
 
 # TODO
 - Add an inertia / mass model
